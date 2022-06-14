@@ -254,7 +254,8 @@ local set_code = function(driver, device, command)
     driver:inject_capability_command(device, {
       capability = capabilities.lockCodes.ID,
       command = capabilities.lockCodes.commands.nameSlot.NAME,
-      args = command.args
+      args = command.args,
+      positional_args = command.positional_args
     })
   else
     device:send(LockCluster.server.commands.SetPINCode(device,

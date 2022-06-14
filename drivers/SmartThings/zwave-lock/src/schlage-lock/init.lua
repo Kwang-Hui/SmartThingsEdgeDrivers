@@ -58,7 +58,8 @@ local function set_code(self, device, cmd)
     self:inject_capability_command(device, {
       capability = capabilities.lockCodes.ID,
       command = capabilities.lockCodes.commands.nameSlot.NAME,
-      args = cmd.args
+      args = cmd.args,
+      positional_args = cmd.positional_args
     })
   else
     -- copied from defaults with additional check for Schlage's configuration
